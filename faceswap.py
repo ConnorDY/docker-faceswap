@@ -49,7 +49,7 @@ import numpy
 
 import sys
 
-PREDICTOR_PATH = "/app/face_training.dat"
+PREDICTOR_PATH = "/faceswap/face_training.dat"
 SCALE_FACTOR = 1
 FEATHER_AMOUNT = 11
 
@@ -219,7 +219,7 @@ warped_corrected_im2 = correct_colours(im1, warped_im2, landmarks1)
 
 output_im = im1 * (1.0 - combined_mask) + warped_corrected_im2 * combined_mask
 
-cv2.imwrite('/app/temp/swapped.jpg', output_im)
+cv2.imwrite('/temp/swapped.jpg', output_im)
 
 # fin
 print('success')

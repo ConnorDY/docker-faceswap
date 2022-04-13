@@ -72,13 +72,13 @@ RUN cd ~ && \
 # uninstall
 RUN apt-get autoremove
 
-WORKDIR /app
+WORKDIR /faceswap
 
 # add training data
-COPY ./face_training.dat /app/face_training.dat
+COPY ./face_training.dat ./face_training.dat
 
 # add script
-COPY ./faceswap.py /app/faceswap.py
+COPY ./faceswap.py ./faceswap.py
 
-ENTRYPOINT ["python3", "/app/faceswap.py", "/app/temp/original.jpg"]
-CMD ["/app/faces/5.jpg"]
+ENTRYPOINT ["python3", "/faceswap/faceswap.py", "/temp/original.jpg"]
+CMD ["/faces/5.jpg"]
